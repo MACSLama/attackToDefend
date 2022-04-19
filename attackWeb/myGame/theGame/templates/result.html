@@ -1,0 +1,83 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+<body>
+
+{% if truecounter == 7 %}
+
+    <table>
+        <tr>
+            <td>
+                <div  class="choice"> WOW, Great job. you gave me the correct answer to all questions.
+                    <br> You helped me secure my client, and save my job. </div>
+            </td>
+            <td>
+             <div  class="button button2"> You answered {{truecounter}} out of 7 correctly.<br>
+             Your Final Score :{{score}} </div> 
+            </td>
+           
+           
+        </tr>
+        <tr>
+            <td colspan="2">
+                <img src="{% static 'images/giphy.gif' %}" class="pic1show"  >
+            </td>
+        </tr>
+    </table>
+
+
+</div>
+{% elif score >= 4 %}
+
+    <table>
+        <tr>
+            <td>
+                <div  class="choice">I think that we did a good job. I hope our mistakes did not have an impact on our client.
+                    thanks a lot for your help.</div>
+            </td>
+            <td>
+             <div  class="button button2"> You answered {{truecounter}} out of 7 correctly.<br>
+             Your Final Score :{{score}} </div> 
+            </td>
+          
+            
+        </tr>
+        <tr>
+            <td colspan="2">
+                <img src="{% static 'images/fine.gif' %}" class="pic1show"  >
+            </td>
+        </tr>
+    </table>
+    
+
+{% else  %}
+<table>
+ 
+    <tr>
+        <td>
+            <div  class="button button2"> You answered {{truecounter}} out of 7 correctly.<br>
+            Your Final Score :{{score}} </div> 
+        </td>
+        <td>
+            <div  class="feedbackox"> Unfortunately, we could not secure our customer. This group is very smart. <br>
+                We should have read more about their techniques and tactics before performing our moves.
+               Thanks for trying helping me, but let's hope I don't lose my job.
+            </div>
+        </td>
+        <td colspan="2">
+            <img src="{% static 'images/lose.gif' %}" class="pic1show"  >
+        </td>
+     
+    </tr>
+    
+</table>
+
+   
+{% endif %}
+
+
+</body>
+<script>
+ window.onload = function() {
+    document.getElementById("win").play();
+}
+</script>

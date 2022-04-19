@@ -1,0 +1,245 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+<body id="bg" class="tdStyleback" ></body>
+<table align="center" id="firstView" width="100%" height="50"> 
+    <tr>
+        <td colspan="2"  >
+            <div  ><img src="{% static 'images/priVileg.png' %}" class="table" width="100%" ></div>
+        </td>
+        
+         <td  colspan="1" > 
+           <div  class="button button2"> Your Score :{{score}} </div> 
+            <br><br>
+            <div class="choiceboxshow"> How Confident are you with the answer? <br>
+                <input type="button" value="Very confident, no help needed" onclick="confident()" class=" button button2">
+                <input type="button" value="Not sure, i  need a hint " onclick="notConfident()" class=" button button2">
+            </div>
+         </td>
+       
+       
+
+    </tr>
+    <tr>
+         <td>
+            <div class="choiceBoxshow" >Limit Hardware Installation and use auditing tools capable of detecting privilege and service abuse.<br> <br></div>
+            
+
+         </td>
+         <td>  
+            <div class="choiceBoxshow" >Limit privileges of user accounts and groups, and use auditing tools capable of detecting privilege and service abuse. <br> <br></div>
+            
+           
+         </td>
+         <td>
+            <div class="choiceBoxshow" > <br>  Limit Hardware Installation and Limit privileges of user accounts and groups.</div>
+             
+
+          
+    </tr>
+    
+</table>
+
+<table align="center" id="firstViewnotConf" width="100%" height="50" class="invisibleDiv"> 
+    <tr>
+        <td colspan="2"  >
+            <div  ><img src="{% static 'images/priVileg.png' %}" class="table" width="100%" ></div>
+        </td>
+        
+         <td> 
+            <div  class="button button2"> Your Score :{{score}} </div> 
+         <br><br><br> 
+             
+                <input type="submit"  value="Hint" onclick="deduct()" class=" button buttonred">
+                
+            </td>
+
+    </tr>
+    <tr>
+         <td>
+            <div class="choiceBoxshow" >Limit Hardware Installation and use auditing tools capable of detecting privilege and service abuse..<br> <br></div>
+            <input type="button" value="Choose" onclick="feedbackFalsenotConf()" class=" button button2">
+
+         </td>
+         <td>  
+            <div class="choiceBoxshow" >Limit privileges of user accounts and groups, and use auditing tools capable of detecting privilege and service abuse. <br> <br></div>
+            <input type="button" value="Choose" onclick="feedbackTruenotConf()" class=" button button2">
+           
+         </td>
+         <td>
+            <div class="choiceBoxshow" > <br>  Limit Hardware Installation and Limit privileges of user accounts and groups.</div>
+             <input type="button" value="Choose" onclick="feedbackFalsen()" class=" button button2">
+
+          </td>
+    </tr>
+    
+</table>
+
+<table align="center" id="firstViewConf" width="100%" height="50" class="invisibleDiv"> 
+    <tr>
+        <td colspan="2"  >
+            <div  ><img src="{% static 'images/priVileg.png' %}" class="table" width="100%" ></div>
+        </td>
+        
+         <td> 
+            <div  class="button button2"> Your Score :{{score}} </div>  
+         </td>
+       
+
+    </tr>
+    <tr>
+         <td>
+            <div class="choiceBoxshow" >Limit Hardware Installation and use auditing tools capable of detecting privilege and service abuse..<br> <br></div>
+            <input type="button" value="Choose" onclick="feedbackFalseConf()" class=" button button2">
+
+         </td>
+         <td>  
+            <div class="choiceBoxshow" >Limit privileges of user accounts and groups, and use auditing tools capable of detecting privilege and service abuse. <br> <br></div>
+            <input type="button" value="Choose" onclick="feedbackTrueConf()" class=" button button2">
+           
+         </td>
+         <td>
+            <div class="choiceBoxshow" > <br>  Limit Hardware Installation and Limit privileges of user accounts and groups.</div>
+             <input type="button" value="Choose" onclick="feedbackFalseConf()" class=" button button2">
+
+          </td>
+    </tr>
+    
+</table>
+
+
+<table id="trueConf" class="invisibleDiv" width="100%" align="center">
+    <tr width="100%">
+          <td><div class="feedbackox"> You are correct, Good job!!<br>Limiting privileges for users allows only authorized administrators to interact with service changes and service configurations.<br>
+            If any unauthorized user had these privileges, the auditing tools will detect it and pan it.<br><form action="https://attack.mitre.org/techniques/T1543/003/" target="_blank"> 
+                                        <input type="submit" value="Find more!" class=" button button2"> </form> </td>
+          <td><div class="invisibleDiv"></div> </td>
+          <td> <img src="{% static 'images/true.png' %}" class="pic"></td>
+          <td>
+              <form action="http://127.0.0.1:8000/team/blue/task3/" method="post" name="trueForm">{%csrf_token%}
+                <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
+                <input class="invisibleDiv"  value="2"  name="scoreAdd" >
+                <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
+                <input class="invisibleDiv"  value="1"  name="counterAdd" >
+                <input class="invisibleDiv"  value="0" id="deductCost"  name="helpdeduct" >
+                <input type="submit" value="Continue" class=" button button2" >  
+               
+                  
+                  
+                </form>
+            </td>
+      </tr>
+  </table>
+  
+  <table id="falseConf" class="invisibleDiv" width="100%" align="center">
+      <tr width="50%">
+            <td><div class="feedbackox" >That was not the right decision. <br> If adversaries are trying to increase their privileges, 
+                this means that they already have access to the system, and limiting Hardware Installation will not help at this stage.<br> The link below can give you more information.  
+                <br><form action="https://attack.mitre.org/techniques/T1543/003/" target="_blank"> 
+                    <input type="submit" value="Find more!" class=" button button2"> </form> 
+
+             
+              </div></td>
+            <td> <img src="{% static 'images/fault.png' %}" class="pic1show"></td>
+            <td>
+                <form action="http://127.0.0.1:8000/team/blue/task3/"  method="post" name="falseForm">{%csrf_token%}
+                    <input class="invisibleDiv"  value="{{score}}" name="score">
+                    <input class="invisibleDiv"  value="0"  name="scoreAdd" >
+                    <input class="invisibleDiv"  value="2" id="deductCost"  name="helpdeduct" >
+                    <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
+                    <input class="invisibleDiv"  value="0"  name="counterAdd" >
+                    <input type="submit" value="Continue" class=" button button2" >
+                </form>
+            </td>
+        </tr>
+    </table>
+
+    <table id="truenotConf" class="invisibleDiv" width="100%" align="center">
+        <tr width="100%">
+              <td><div class="feedbackox"> You are correct, Good job!!<br>Limiting privileges for users allows only authorized administrators to interact with service changes and service configurations.<br>
+                If any unauthorized user had these privileges, the auditing tools will detect it and pan it. </td>
+              <td><div class="invisibleDiv"></div> </td>
+              <td> <img src="{% static 'images/true.png' %}" class="pic"></td>
+              <td>
+                  <form action="http://127.0.0.1:8000/team/blue/task3/" method="post" name="trueForm">{%csrf_token%}
+                    <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
+                    <input class="invisibleDiv"  value="1"  name="scoreAdd" >
+                    <input class="invisibleDiv"  value="0" id="deductCost"  name="helpdeduct" >
+                    <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
+                    <input class="invisibleDiv"  value="1"  name="counterAdd" >
+                    <input type="submit" value="Continue" class=" button button2" >  
+                   
+                      
+                      
+                    </form>
+                </td>
+          </tr>
+      </table>
+      
+      <table id="falsenotConf" class="invisibleDiv" width="100%" align="center">
+          <tr width="50%">
+                <td><div class="feedbackox" >That was not the right decision. <br> If adversaries are trying to increase their privileges, 
+                    this means that they already have access to the system, and limiting Hardware Installation will not help at this stage. 
+    
+                 
+                  </div></td>
+                <td> <img src="{% static 'images/fault.png' %}" class="pic1show"></td>
+                <td>
+                    <form action="http://127.0.0.1:8000/team/blue/task3/"  method="post" name="falseForm">{%csrf_token%}
+                        <input class="invisibleDiv"  value="{{score}}" name="score">
+                        <input class="invisibleDiv"  value="0"  name="scoreAdd" >
+                        <input class="invisibleDiv"  value="0" id="deductCost"  name="helpdeduct" >
+                        <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
+                        <input class="invisibleDiv"  value="1"  name="counterAdd" >
+                        <input type="submit" value="Continue" class=" button button2" >
+                    </form>
+                </td>
+            </tr>
+        </table>
+ 
+
+<script type="text/javascript">
+
+function confident(){
+    document.getElementById("firstView").innerHTML = document.getElementById("firstViewConf").innerHTML ;
+}
+
+function notConfident(){
+    document.getElementById("firstView").innerHTML = document.getElementById("firstViewnotConf").innerHTML ;
+}
+   
+
+function feedbackTrueConf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("trueConf").innerHTML ;
+    document.getElementById("score").innerText= 5;
+
+}
+
+function feedbackFalseConf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("falseConf").innerHTML ;
+    document.getElementById("score").innerText= 0;
+
+
+}
+
+function feedbackTruenotConf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("truenotConf").innerHTML ;
+    document.getElementById("score").innerText= 5;
+
+}
+
+function feedbackFalsenotConf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("falsenotConf").innerHTML ;
+    document.getElementById("score").innerText= 0;
+
+
+}
+function deduct(){
+    window.open("https://attack.mitre.org/techniques/T1543/003/");
+    
+
+}
+
+
+</script>

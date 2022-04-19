@@ -1,0 +1,9 @@
+gameVenv\Scripts\activate
+cd myGame
+python manage.py runserver
+
+
+
+ 
+
+

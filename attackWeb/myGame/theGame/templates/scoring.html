@@ -1,0 +1,33 @@
+{% load static %}
+
+<body id="bg" class="back"></body>
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+
+
+<div class="about">
+    In this game, the scoring technique depends on a confident factor. <br>
+    Before answering the question, the players should reply whether they are confident with their answer or that they are not so sure and need help.<br>
+    If the player is confident and chose the correct answer, then he/she will gain 2 points. But if the answer was wrong he/she will be fined 2 points.<br>
+    meanwhile, if the player was not so sure and asked for help. He/she will be directed to a page with a hint option. <br>
+    if the answer then was correct, the player will gain 1 point, and if wrong, no deduction will happen. 
+    <br>
+    This method encourages the player to seek help and search more before answering. 
+
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<form action="http://127.0.0.1:8000/tutorial/" method="post" >{%csrf_token%}
+    <input type="submit" value="Back" class=" button buttongrey">
+  </form>

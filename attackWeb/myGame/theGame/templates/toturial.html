@@ -1,0 +1,33 @@
+{% load static %}
+
+<body id="bg" class="tdStyleback"></body>
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+<header class="header"> ATT&CK To Defend Game Tutorial </header>
+<br> <br><br><br><br><br><br><br><br><br>
+<table>
+
+  <tr>
+
+    <td>
+      <form action="http://127.0.0.1:8000/about/" method="post" >{%csrf_token%}
+       <input type="submit" value="About The Game"  class=" button button2">
+     </form> 
+    </td>
+    <td>
+       <form action="http://127.0.0.1:8000/scoring/" method="post" >{%csrf_token%}
+         <input type="submit" value="Confident factor & Scoring technique" class=" button button2">
+        </form>
+      </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <form action="http://127.0.0.1:8000/" method="post" >{%csrf_token%}
+        <input type="submit" value="Back" class=" button buttongrey">
+      </form>
+    </td>
+  </tr>
+
+
+
+</table>

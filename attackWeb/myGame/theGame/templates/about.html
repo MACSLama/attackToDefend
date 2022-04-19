@@ -1,0 +1,89 @@
+{% load static %}
+
+<body id="bg" class="back"></body>
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+<table>
+    <tr>
+        <td>
+            <div  class="about" id="about1"><div> This game was made to introduce MITRE ATT&CK to cyber security students.<br>
+                To give them the chance to rehearse their knowledge in a fun way.<br>
+                This game consists of several questions with multiple answers to choose from.<br>
+                Each question can have more than one correct answer, the player can choose any. 
+                </div>
+                <br>
+                <input type="submit" value="Next" class=" button button2" onclick="next1()">
+                </div>
+        </td>
+    </tr>
+</table>
+
+
+<div class="invisibleDiv" id="about1Backup">
+    <div>This game was made to introduce MITRE ATT&CK to cyber security students.<br>
+        To give them the chance to rehearse their knowledge in a fun way.<br>
+        This game consists of several questions with multiple answers to choose from.<br>
+        Each question can have more than one correct answer, the player can choose any. 
+        </div>
+    <br>
+    <input type="submit" value="Next" class=" button button2" onclick="next1()">
+    </div>
+<div class="invisibleDiv" id="about2">
+    <div> Each question in this game is about an attack technique for an adversary group, and can have more than one correct answer, <br>the player can choose any correct mitigation to stop the attack.</div>
+    <br>
+    <br>
+    <input type="submit" value="Back" class=" button button2" onclick="back1()">
+    <input type="submit" value="Next" class=" button button2" onclick="next2()">
+
+</div>
+<div class="invisibleDiv" id="about2Backup">
+    <div> Each question in this game is about an attack technique for an adversary group, and can have more than one correct answer, the player can choose any correct mitigation to stop the attack.
+        After answering each question, instant feedback will be given to the player.
+    </div>
+    <br>
+    <br>
+    <input type="submit" value="Back" class=" button button2" onclick="back1()">
+    <input type="submit" value="Next" class=" button button2" onclick="next2()">
+
+</div>
+<div class="invisibleDiv" id="about3">
+    <div> ATT&CK To Defend gives the player the opportunity to visit the ATT&CK matrix for more information, by offering links related to each attack.</div><br><br>
+    <input type="submit" value="Back" class=" button button2" onclick="back2()">
+    <form action="http://127.0.0.1:8000/team/" method="post" >{%csrf_token%}
+        <input type="submit" value="Play" class=" button button2">
+      </form>
+    
+
+</div>
+
+<form action="http://127.0.0.1:8000/tutorial/" method="post" >{%csrf_token%}
+    <input type="submit" value="Back" class=" button buttongrey">
+  </form>
+
+
+<script>
+function next1(){
+
+  document.getElementById("about1").innerHTML = document.getElementById("about2").innerHTML ;
+
+
+}
+function back1(){
+
+document.getElementById("about1").innerHTML = document.getElementById("about1Backup").innerHTML ;
+
+
+}
+function next2(){
+
+document.getElementById("about1").innerHTML = document.getElementById("about3").innerHTML ;
+
+
+}
+function back2(){
+
+document.getElementById("about1").innerHTML = document.getElementById("about2Backup").innerHTML ;
+
+
+}
+</script>

@@ -1,0 +1,322 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+<body id="bg" class="tdStyleback"></body>
+
+<table id="firstView" align="center">
+    <tr> 
+        <td  width="50%">
+            <div></div>
+        </td>
+        <td width="50%">
+            <img src="{% static 'images/attack.png' %}" class="pic1show" id="1">
+        </td>
+    </tr>
+    <tr>
+        <td width="50%" >
+            <div></div>
+        </td>
+        <td width="50%" > 
+            <input id="1to2" type="button" value="Next" onclick="view()" class=" button button2">
+        </td>
+
+    </tr>
+</table>
+
+
+
+
+
+<table id="firstViewBackup" class="invisibleDiv" align="center">
+    <tr> 
+        <td  width="50%">
+            <div></div>
+        </td>
+        <td width="50%">
+            <img src="{% static 'images/attack.png' %}" class="pic1show" id="1">
+        </td>
+    </tr>
+    <tr>
+        <td width="50%" >
+            
+        </td>
+        <td width="50%" > 
+            <input id="1to2" type="button" value="Next" onclick="view()" class=" button button2">
+        </td>
+
+    </tr>
+</table>
+
+<table id="secondView" class="invisibleDiv" align="center">
+    <tr>
+        <td width="50%">
+            
+        </td>
+        <td width="50%">
+            <img src="{% static 'images/piC1.png' %}" class="pic1show">
+        </td>
+    </tr>
+    <tr>
+        <td width="50%"></td>
+        <td width="50%">
+            <input id="2to1" type="button" value="Back" onclick="viewBack()" class=" button button2"> 
+            <input id="2to3" type="button" value="Next" onclick="view2()" class=" button button2">
+        </td>
+    </tr>
+
+</table>
+
+<table id="thrdviewAskConf" class="invisibleDiv" width="100%" align="center">
+    <tr height="30%">
+        <td colspan="3">
+            <img src="{% static 'images/pic2.png' %}" class="table">
+        </td>
+   
+       
+    </tr>
+    <tr>
+        <td>
+            <div class="choiceboxshow" id="option1" > Train the users, so they can be more aware of any stealing account attempt.</div>
+        </td>
+        <td>
+               <div class="choiceboxshow" id="option2">  Make configuration changes related to the operating system that results in a more secured system.<div>
+        </td>
+        <td>
+            <div class="choiceboxshow"> How Confident are you with the answer? <br>
+                <input type="button" value="Very confident, no help needed" onclick="confident()" class=" button button2">
+                <input type="button" value="Not sure, i  need a hint " onclick="notConfident()" class=" button button2">
+            </div>
+             
+             
+        </td>
+        
+    </tr>
+   
+
+</table>
+
+<table id="thrdviewConf" class="invisibleDiv" width="100%" align="center">
+    <tr width="50%">
+        <td>
+            <div class="choiceboxshow" id="option1" > Train the users, so they can be more aware of any stealing account attempt.</div>
+            <br> <input type="button" value="Choose" onclick="feedbackFalseConf()" class=" button button2">
+            <br><br><br><br>
+            <div class="choiceboxshow" id="option2"> Make configuration changes related to the operating system that results in a more secured system.</div>
+            <br> <input type="button" value="Choose" onclick="feedbackTrueConf()" class=" button button2">
+
+
+
+        </td>
+        <td><img src="{% static 'images/pic2.png' %}" class="table"></td>
+    </tr>
+   
+
+</table>
+
+<table id="thrdviewNotConf" class="invisibleDiv" width="100%" align="center">
+    <tr height="30%">
+        <td colspan="3">
+            <img src="{% static 'images/pic2.png' %}" class="table">
+        </td>
+        
+        
+    </tr>    
+    <tr width="50%">
+            <td>
+                <div class="choiceboxshow" id="option1" ><br> Train the users, so they can be more aware of any stealing account attempt.</div>
+                <br> <input type="button" value="Choose" onclick="feedbackFalsenotConf()" class=" button button2">
+            
+            </td>
+            <td>
+                <div class="choiceboxshow" id="option2"> Make configuration changes related to the operating system that results in a more secured system.</div>
+                <br> <input type="button" value="Choose" onclick="feedbackTruenotConf()" class=" button button2">
+            </td>
+            <td > 
+                <form  id="getHelp" method="post" target="_blank">{%csrf_token%}
+                <input type="submit" name="help" value="Hint." onclick="deduct()" class=" button buttonred">
+                </form>
+                
+            </td>
+            
+
+        </tr>
+       
+
+</table>
+
+  
+
+<table id="trueConf" class="invisibleDiv" width="100%" align="center">
+  <tr width="50%">
+        <td>
+            <div class="feedbackox"> You are correct, Good job.<br> Operating systems are very important, 
+                if they were vulnerable, everything that is stored in them is vulnerable. That is why Operating systems are the starting point for security.<br><form action="https://attack.mitre.org/techniques/T1087/" target="_blank"> 
+                <input type="submit" value="Find more!" class=" button button2"> </form></div>
+        </td>
+    
+        <td> 
+            <img src="{% static 'images/True.png' %}" class="pic">
+        </td>
+        <td> 
+            <form method="post" action="http://127.0.0.1:8000/team/blue/task2/" name="trueFormCOnf">
+               {% csrf_token %}
+               <input class="invisibleDiv" id="score" value="2" name="score">
+               <input class="invisibleDiv"  value="0"  name="helpdeduct" >
+               <input class="invisibleDiv"  value="1"  name="trueCount" >
+               <input type="submit" value="Continue" class=" button button2"> 
+            
+             </form> 
+        </td>
+    </tr>
+</table>
+
+
+<table id="falseConf" class="invisibleDiv" width="100%" align="center">
+    <tr width="50%">
+          <td>
+              <div class="feedbackox" >Oh No !! We did not make the correct call.  <br>
+                Even well-trained employees can fall into some traps.<br>
+                Operating systems are very important, if they were vulnerable, everything that is stored in them is vulnerable.<br>
+                So we should have focussed on configuring the operating system.<br>
+                The link below can give you more information.  
+                <br><form action="https://attack.mitre.org/techniques/T1087/" target="_blank"> 
+                    <input type="submit" value="Find more!" class=" button button2"> </form>
+            </div>
+          </td>
+          <td>
+               <img src="{% static 'images/fault.png' %}" class="pic1show">
+          </td>
+          <td>
+              <form  method="post" action="http://127.0.0.1:8000/team/blue/task2/" name="falseFormConf"> 
+                {% csrf_token %}
+                <input class="invisibleDiv"  value="0" name="score">
+                <input class="invisibleDiv"  value="2"  name="helpdeduct" >
+                <input type="submit" value="Continue" class=" button button2">
+            
+             </form>
+         </td>
+      </tr>
+  </table>
+
+  <table id="truenotConf" class="invisibleDiv" width="100%" align="center">
+    <tr width="50%">
+          <td>
+              <div class="feedbackox"> YoYou are correct, Good job.<br> Operating systems are very important, 
+                if they were vulnerable, everything that is stored in them is vulnerable. That is why Operating systems are the starting point for security.</div>
+          </td>
+      
+          <td> 
+              <img src="{% static 'images/True.png' %}" class="pic">
+          </td>
+          <td> 
+              <form method="post" action="http://127.0.0.1:8000/team/blue/task2/" name="trueFormCOnf">
+                 {% csrf_token %}
+                 <input class="invisibleDiv" id="score" value="1" name="score">
+                 <input class="invisibleDiv"  value="0"  name="helpdeduct" >
+                 <input class="invisibleDiv" id="counter" value="1"  name="trueCount" >
+                 <input type="submit" value="Continue" class=" button button2"> 
+              
+               </form> 
+          </td>
+      </tr>
+  </table>
+  
+  
+  <table id="falsenotConf" class="invisibleDiv" width="100%" align="center">
+      <tr width="50%">
+            <td>
+                <div class="feedbackox" >Oh No !! We did not make the correct call.  <br>
+                    Even well-trained employees can fall into some traps.<br>
+                    Operating systems are very important, if they were vulnerable, everything that is stored in them is vulnerable.<br>
+                    So we should have focussed on configuring the operating system.<br>
+                 
+              </div>
+            </td>
+            <td>
+                 <img src="{% static 'images/fault.png' %}" class="pic1show">
+            </td>
+            <td>
+                <form  method="post" action="http://127.0.0.1:8000/team/blue/task2/" name="falseFormConf"> 
+                  {% csrf_token %}
+                  <input class="invisibleDiv"  value="0" name="score">
+                  <input class="invisibleDiv"  value="0"  name="helpdeduct" >
+                  <input type="submit" value="Continue" class=" button button2">
+              
+               </form>
+           </td>
+        </tr>
+    </table>
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+function view(){
+
+    document.getElementById("firstView").innerHTML = document.getElementById("secondView").innerHTML ;
+
+  
+}
+
+function view2(){
+    document.getElementById("firstView").innerHTML = document.getElementById("thrdviewAskConf").innerHTML ;
+}
+
+function viewBack(){
+    document.getElementById("firstView").innerHTML = document.getElementById("firstViewBackup").innerHTML ;
+  
+}
+
+function confident(){
+    document.getElementById("firstView").innerHTML = document.getElementById("thrdviewConf").innerHTML ;
+}
+
+function notConfident(){
+    document.getElementById("firstView").innerHTML = document.getElementById("thrdviewNotConf").innerHTML ;
+}
+
+function feedbackTrueConf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("trueConf").innerHTML ;
+    document.getElementById("counter").innerText= 1;
+
+}
+
+function feedbackFalseConf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("falseConf").innerHTML ;
+    document.getElementById("score").innerText= 0;
+
+
+}
+
+function feedbackTruenotConf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("truenotConf").innerHTML ;
+    document.getElementById("counter").innerText= 1;
+
+}
+
+function feedbackFalsenotConf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("falsenotConf").innerHTML ;
+    document.getElementById("score").innerText= 0;
+
+
+}
+
+function deduct(){
+    window.open("https://attack.mitre.org/techniques/T1087/");
+    }
+</script>
