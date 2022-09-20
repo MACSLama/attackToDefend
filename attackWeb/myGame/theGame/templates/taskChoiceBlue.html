@@ -1,0 +1,38 @@
+{% load static %}
+
+<body id="bg" class="tdStyleback"></body>
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+<header class="header"> ATT&CK To Defend </header>
+<br> <br><br><br><br><br><br><br><br><br>
+<h2> Chose your mession here </h2>
+<table>
+
+  <tr>
+
+    <td>
+      <div class="backbox"> Mession 1  </div> 
+      <form action="{% url 'blue1' %}" method="post" >{%csrf_token%}
+       <input type="submit" value="Start"  class=" button button2">
+     </form> 
+   
+    </td>
+    <td>
+      <div class="backbox"> Mession 2 </div>
+      <form action="{% url 'blue2' %}" method="post" >{%csrf_token%}
+        <input type="submit" value="Start" class=" button button2">
+       </form>
+     </td>
+    
+ </tr>
+ <tr rowspan="2">
+  <td>
+    <form action="{% url 'main' %}" method="post" >{%csrf_token%}
+      <input type="submit" value="Back to Main" class=" button button2">
+     </form>
+   </td>
+ </tr>
+
+
+
+</table>

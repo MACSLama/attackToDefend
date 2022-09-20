@@ -1,0 +1,32 @@
+{% load static %}
+
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <body id="bg" class="tdStyleback"></body>
+   
+    <table>
+
+        <tr>
+            <td width="50%" height="auto%">
+                <div class="about">
+                  <img src="{% static 'images/Introduc.png' %}" class="pic">
+                </div>
+            </td>
+            <td width="50%" height="auto%"> </td>
+            <td float="right"> 
+                <form action="{% url 'task1' %}">
+
+                    <input class="button button2" type="submit" value="Start">
+                </form>
+                <form action="{% url 'taskChoiceBlue' %}">
+
+                    <input class="button button2" type="submit" value="Back">
+                </form>
+            </td>
+        </tr>
+    </table>
+
+
+
+
+   

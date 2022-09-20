@@ -9,7 +9,7 @@
 <table align="center" id="firstView" width="100%" height="50"> 
     <tr>
         <td colspan="3"  >
-            <div  ><img src="{% static 'images/phishing.png' %}" class="pic1show"  ></div>
+            <div  ><img src="{% static 'images/phishin.png' %}" class="pic"  ></div>
         </td>
         
         <td> 
@@ -45,7 +45,7 @@
 <table align="center" id="firstViewConf"  class="invisibleDiv" width="100%" height="50"> 
     <tr>
         <td colspan="2"  >
-            <div  ><img src="{% static 'images/phishing.png' %}" class="pic1show"  ></div>
+            <div  ><img src="{% static 'images/phishin.png' %}" class="pic"  ></div>
         </td>
         
          <td > 
@@ -54,22 +54,22 @@
     </tr>
     <tr>
          <td>
-            <div class="choiceboxshow" > Restrict Web-Based Content.  <br><br>
-            <input type="button" value="Choose" onclick="feedbackTrue2Conf()" class=" button button2"></div>
+            <div class="choiceboxshow" > Restrict Web-Based Content.  <br><br></div>
+            <input type="button" value="Choose" onclick="feedbackTrue2Conf()" class=" button button2">
 
          <br>  
-            <div class="choiceboxshow" > Boot Integrity. <br><br><br>
-            <input type="button" value="Choose" onclick="feedbackFalse1Conf()" class=" button button2"></div>
+            <div class="choiceboxshow" > Boot Integrity. <br><br><br></div>
+            <input type="button" value="Choose" onclick="feedbackFalse1Conf()" class=" button button2">
            
          </td>
          <td>
-            <div class="choiceboxshow" > Update Software.<br> <br><br> 
-             <input type="button" value="Choose" onclick="feedbackFalse2Conf()" class=" button button2"></div>
+            <div class="choiceboxshow" > Update Software.<br> <br><br> </div>
+             <input type="button" value="Choose" onclick="feedbackFalse2Conf()" class=" button button2">
 
           
           <br>
-            <div class="choiceboxshow" > User Training.<br><br><br>
-             <input type="button" value="Choose" onclick="feedbackTrue1Conf()" class=" button button2"></div>
+            <div class="choiceboxshow" > User Training.<br><br><br></div>
+             <input type="button" value="Choose" onclick="feedbackTrue1Conf()" class=" button button2">
 
           </td>
     </tr>
@@ -78,7 +78,7 @@
 <table align="center" id="firstViewnotConf"  class="invisibleDiv" width="100%" height="50"> 
     <tr>
         <td colspan="3"  >
-            <div  ><img src="{% static 'images/phishing.png' %}" class="pic1show"  ></div>
+            <div  ><img src="{% static 'images/phishin.png' %}" class="pic"  ></div>
         </td>
         
         <td> 
@@ -93,22 +93,22 @@
     </tr>
     <tr>
         <td>
-           <div class="choiceboxshow" > Restrict Web-Based Content. <br><br> 
-           <input type="button" value="Choose" onclick="feedbackTrue2notConf()" class=" button button2"></div>
+           <div class="choiceboxshow" > Restrict Web-Based Content. <br><br> </div>
+           <input type="button" value="Choose" onclick="feedbackTrue2notConf()" class=" button button2">
 
         <br>  
-           <div class="choiceboxshow" > Boot Integrity.<br><br><br> 
-           <input type="button" value="Choose" onclick="feedbackFalse1notConf()" class=" button button2"></div>
+           <div class="choiceboxshow" > Boot Integrity.<br><br><br> </div>
+           <input type="button" value="Choose" onclick="feedbackFalse1notConf()" class=" button button2">
           
         </td>
         <td>
-           <div class="choiceboxshow" >Update Software.<br> <br><br> 
-            <input type="button" value="Choose" onclick="feedbackFalse2notConf()" class=" button button2"></div>
+           <div class="choiceboxshow" >Update Software.<br> <br><br> </div>
+            <input type="button" value="Choose" onclick="feedbackFalse2notConf()" class=" button button2">
 
          
          <br>
-           <div class="choiceboxshow" >User Training.<br><br><br>
-            <input type="button" value="Choose" onclick="feedbackTrue1notConf()" class=" button button2"></div>
+           <div class="choiceboxshow" >User Training.<br><br><br></div>
+            <input type="button" value="Choose" onclick="feedbackTrue1notConf()" class=" button button2">
 
          </td>
    </tr>
@@ -119,14 +119,14 @@
 <table id="true1Conf" class="invisibleDiv" width="100%" align="center">
     <tr width="100%">
           <td><div class="feedbackox">This is a very important step.
-            Although we can not entirely depend on the awareness of the users, we can not underestimate the value of training the users against phishing attempts. 
-            But of course we have to take other measurements, like Restrict Web-Based Content. <br>
+            Although we can not entirely depend on the awareness of the users, we can not underestimate the value of training the users against phishin attempts. 
+            But of course we have to take other measurements, like Restrict Web-Based Content. <br></div>
               
                  <form action="https://attack.mitre.org/techniques/T1204/001/" target="_blank"> 
             <input type="submit" value="Find more!" class=" button button2"> </form> </td>
-          <td> <img src="{% static 'images/true.png' %}" class="pic"></td>
+          <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
           <td>
-              <form action="http://127.0.0.1:8000/team/blue/result/" method="post" name="trueForm1">{%csrf_token%}
+              <form action="{% url 'result' %}" method="post" name="trueForm1">{%csrf_token%}
                 <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
                 <input class="invisibleDiv"  value="2"  name="scoreAdd" >
                 <input class="invisibleDiv"  value="0"  name="helpdeduct" >
@@ -142,12 +142,12 @@
     <tr width="100%">
           <td><div class="feedbackox">Yes!! This is crucial to prevent opening malicious content. 
             Some download scanning devices can open and analyze compressed and encrypted formats, 
-            such as zip and rar that may be used to conceal malicious files. We can also train the user to be more aware of these attempts.
+            such as zip and rar that may be used to conceal malicious files. We can also train the user to be more aware of these attempts.</div>
             <br> <form action="https://attack.mitre.org/techniques/T1204/001/" target="_blank"> 
                 <input type="submit" value="Find more!" class=" button button2"> </form> </td>
-          <td> <img src="{% static 'images/true.png' %}" class="pic"></td>
+          <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
           <td>
-              <form action="http://127.0.0.1:8000/team/blue/result/" method="post" name="trueForm2">{%csrf_token%}
+              <form action="{% url 'result' %}" method="post" name="trueForm2">{%csrf_token%}
                 <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
                 <input class="invisibleDiv"  value="2"  name="scoreAdd" >
                 <input class="invisibleDiv"  value="0"  name="helpdeduct" >
@@ -163,15 +163,15 @@
   <table id="false1Conf" class="invisibleDiv" width="100%" align="center">
       <tr width="50%">
             <td><div class="feedbackox" >Am afraid this is not correct. Because the attack occurs after the system is booted and doesn’t require a corrupt boot record.
-                 <br>The link below can give you more information.    
+                 <br>The link below can give you more information.   </div> 
                 <br><form action="https://attack.mitre.org/techniques/T1204/001/" target="_blank"> 
                     <input type="submit" value="Find more!" class=" button button2"> </form>
 
              
               </div></td>
-            <td> <img src="{% static 'images/fault.png' %}" class="pic1show"></td>
+            <td> <img src="{% static 'images/fault.png' %}" class="pic"></td>
             <td>
-                <form action="http://127.0.0.1:8000/team/blue/result/" method="post" name="falseForm1">{%csrf_token%}
+                <form action="{% url 'result' %}" method="post" name="falseForm1">{%csrf_token%}
                     <input class="invisibleDiv"  value="{{score}}" name="score">
                     <input class="invisibleDiv"  value="0"  name="scoreAdd" >
                     <input class="invisibleDiv"  value="2"  name="helpdeduct" >
@@ -186,14 +186,14 @@
     <table id="false2Conf" class="invisibleDiv" width="100%" align="center">
         <tr width="50%">
               <td><div class="feedbackox" >Updating the software can't help us here. Because the attack occurs through a link and not vulnerable software. 
-                The link below can give you more information.  
+                The link below can give you more information.  </div>
                 <br><form action="https://attack.mitre.org/techniques/T1204/001/" target="_blank"> 
                     <input type="submit" value="Find more!" class=" button button2"> </form>
                
                 </div></td>
-              <td> <img src="{% static 'images/fault.png' %}" class="pic1show"></td>
+              <td> <img src="{% static 'images/fault.png' %}" class="pic"></td>
               <td>
-                  <form action="http://127.0.0.1:8000/team/blue/result/" method="post" name="falseForm2">{%csrf_token%}
+                  <form action="{% url 'result' %}" method="post" name="falseForm2">{%csrf_token%}
                       <input class="invisibleDiv"  value="{{score}}" name="score">
                       <input class="invisibleDiv"  value="0"  name="scoreAdd" >
                       <input class="invisibleDiv"  value="2"  name="helpdeduct" >
@@ -208,11 +208,11 @@
       <table id="true1notConf" class="invisibleDiv" width="100%" align="center">
         <tr width="100%">
               <td><div class="feedbackox">This is a very important step.
-                Although we can not entirely depend on the awareness of the users, we can not underestimate the value of training the users against phishing attempts. 
+                Although we can not entirely depend on the awareness of the users, we can not underestimate the value of training the users against phishin attempts. 
                 But of course we have to take other measurements, like Restrict Web-Based Content </td>
-              <td> <img src="{% static 'images/true.png' %}" class="pic"></td>
+              <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
               <td>
-                  <form action="http://127.0.0.1:8000/team/blue/result/" method="post" name="trueForm1">{%csrf_token%}
+                  <form action="{% url 'result' %}" method="post" name="trueForm1">{%csrf_token%}
                     <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
                     <input class="invisibleDiv"  value="1"  name="scoreAdd" >
                     <input class="invisibleDiv"  value="0"  name="helpdeduct" >
@@ -229,9 +229,9 @@
               <td><div class="feedbackox"> Yes!! This is crucial to prevent opening malicious content. 
                 Some download scanning devices can open and analyze compressed and encrypted formats, 
                 such as zip and rar that may be used to conceal malicious files. We can also train the user to be more aware of these attempts.</td>
-              <td> <img src="{% static 'images/true.png' %}" class="pic"></td>
+              <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
               <td>
-                  <form action="http://127.0.0.1:8000/team/blue/result/" method="post" name="trueForm2">{%csrf_token%}
+                  <form action="{% url 'result' %}" method="post" name="trueForm2">{%csrf_token%}
                     <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
                     <input class="invisibleDiv"  value="1"  name="scoreAdd" >
                     <input class="invisibleDiv"  value="0"  name="helpdeduct" >
@@ -250,9 +250,9 @@
     
                  
                   </div></td>
-                <td> <img src="{% static 'images/fault.png' %}" class="pic1show"></td>
+                <td> <img src="{% static 'images/fault.png' %}" class="pic"></td>
                 <td>
-                    <form action="http://127.0.0.1:8000/team/blue/result/" method="post" name="falseForm1">{%csrf_token%}
+                    <form action="{% url 'result' %}" method="post" name="falseForm1">{%csrf_token%}
                         <input class="invisibleDiv"  value="{{score}}" name="score">
                         <input class="invisibleDiv"  value="0"  name="scoreAdd" >
                         <input class="invisibleDiv"  value="0"  name="helpdeduct" >
@@ -269,9 +269,9 @@
   
                    
                     </div></td>
-                  <td> <img src="{% static 'images/fault.png' %}" class="pic1show"></td>
+                  <td> <img src="{% static 'images/fault.png' %}" class="pic"></td>
                   <td>
-                      <form action="http://127.0.0.1:8000/team/blue/result/" method="post" name="falseForm2">{%csrf_token%}
+                      <form action="{% url 'result' %}" method="post" name="falseForm2">{%csrf_token%}
                           <input class="invisibleDiv"  value="{{score}}" name="score">
                           <input class="invisibleDiv"  value="0"  name="scoreAdd" >
                           <input class="invisibleDiv"  value="0"  name="helpdeduct" >

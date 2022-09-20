@@ -9,7 +9,7 @@
 <table align="center" id="firstView" width="100%" height="50"> 
     <tr>
         <td colspan="3"  >
-            <div  ><img src="{% static 'images/literal.png' %}" class="pic1show"  ></div>
+            <div  ><img src="{% static 'images/literal.png' %}" class="pic"  ></div>
         </td>
         
         <td> 
@@ -45,7 +45,7 @@
 <table align="center" id="firstViewConf"  class="invisibleDiv" width="100%" height="50"> 
     <tr>
         <td colspan="2"  >
-            <div  ><img src="{% static 'images/literal.png' %}" class="pic1show"  ></div>
+            <div  ><img src="{% static 'images/literal.png' %}" class="pic"  ></div>
         </td>
         
          <td > 
@@ -54,22 +54,22 @@
     </tr>
     <tr>
          <td>
-            <div class="choiceboxshow" >  Limit Access to Resource Over Network. <br><br>
-            <input type="button" value="Choose" onclick="feedbackTrue2Conf()" class=" button button2"></div>
+            <div class="choiceboxshow" >  Limit Access to Resource Over Network. <br><br></div>
+            <input type="button" value="Choose" onclick="feedbackTrue2Conf()" class=" button button2">
 
          <br>  
-            <div class="choiceboxshow" > Filter Network Traffic. <br><br>
-            <input type="button" value="Choose" onclick="feedbackTrue1Conf()" class=" button button2"></div>
+            <div class="choiceboxshow" > Filter Network Traffic. <br><br></div>
+            <input type="button" value="Choose" onclick="feedbackTrue1Conf()" class=" button button2">
            
          </td>
          <td>
-            <div class="choiceboxshow" > Data Backup.<br> <br><br> 
-             <input type="button" value="Choose" onclick="feedbackFalse2Conf()" class=" button button2"></div>
+            <div class="choiceboxshow" > Data Backup.<br> <br><br> </div>
+             <input type="button" value="Choose" onclick="feedbackFalse2Conf()" class=" button button2">
 
           
           <br>
-            <div class="choiceboxshow" > Data Loss Prevention.<br><br><br>
-             <input type="button" value="Choose" onclick="feedbackFalse1Conf()" class=" button button2"></div>
+            <div class="choiceboxshow" > Data Loss Prevention.<br><br><br></div>
+             <input type="button" value="Choose" onclick="feedbackFalse1Conf()" class=" button button2">
 
           </td>
     </tr>
@@ -78,7 +78,7 @@
 <table align="center" id="firstViewnotConf"  class="invisibleDiv" width="100%" height="50"> 
     <tr>
         <td colspan="3"  >
-            <div  ><img src="{% static 'images/literal.png' %}" class="pic1show"  ></div>
+            <div  ><img src="{% static 'images/literal.png' %}" class="pic"  ></div>
         </td>
         
         <td> 
@@ -93,23 +93,23 @@
     </tr>
     <tr>
          <td>
-            <div class="choiceboxshow" > Limit Access to Resource Over Network.<br><br>
-            <input type="button" value="Choose" onclick="feedbackTrue2notConf()" class=" button button2"></div>
+            <div class="choiceboxshow" > Limit Access to Resource Over Network.<br><br></div>
+            <input type="button" value="Choose" onclick="feedbackTrue2notConf()" class=" button button2">
 
          </td>
          <td>  
-            <div class="choiceboxshow" >Filter Network Traffic. <br><br>
-            <input type="button" value="Choose" onclick="feedbackTrue1notConf()" class=" button button2"></div>
+            <div class="choiceboxshow" >Filter Network Traffic. <br><br></div>
+            <input type="button" value="Choose" onclick="feedbackTrue1notConf()" class=" button button2">
            
          </td>
          <td>
-            <div class="choiceboxshow" >Data Backup.<br> <br><br> 
-             <input type="button" value="Choose" onclick="feedbackFalse2notConf()" class=" button button2"></div>
+            <div class="choiceboxshow" >Data Backup.<br> <br><br> </div>
+             <input type="button" value="Choose" onclick="feedbackFalse2notConf()" class=" button button2">
 
           </td>
           <td>
-            <div class="choiceboxshow" > Data Loss Prevention.<br><br><br>
-             <input type="button" value="Choose" onclick="feedbackFalse1notConf()" class=" button button2"></div>
+            <div class="choiceboxshow" > Data Loss Prevention.<br><br><br></div>
+             <input type="button" value="Choose" onclick="feedbackFalse1notConf()" class=" button button2">
 
           </td>
     </tr>
@@ -120,11 +120,12 @@
     <tr width="100%">
           <td><div class="feedbackox">That is brilliant. We can filter the network traffic
             by using the host firewall to restrict file sharing communications such as SMBs. As well as disable Windows administrative shares to limit access to the resource over network. 
+            </div>
             <br><form action="https://attack.mitre.org/techniques/T1021/002/" target="_blank"> 
              <input type="submit" value="Find more!" class=" button button2"> </form> </td>
-          <td> <img src="{% static 'images/true.png' %}" class="pic"></td>
+          <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
           <td>
-              <form action="http://127.0.0.1:8000/team/blue/task6/" method="post" name="trueForm1">{%csrf_token%}
+              <form action="{% url 'task6' %}" method="post" name="trueForm1">{%csrf_token%}
                 <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
                 <input class="invisibleDiv"  value="2"  name="scoreAdd" >
                 <input class="invisibleDiv"  value="0"  name="helpdeduct" >
@@ -139,13 +140,13 @@
   <table id="true2Conf" class="invisibleDiv" width="100%" align="center">
     <tr width="100%">
           <td><div class="feedbackox"> This is a smart move. We can disable Windows administrative shares. As well as filtering the network traffic
-               by using the host firewall to restrict file sharing communications such as SMB.
+               by using the host firewall to restrict file sharing communications such as SMB.</div>
                <br><form action="https://attack.mitre.org/techniques/T1021/002/" target="_blank"> 
                 <input type="submit" value="Find more!" class=" button button2"> </form>
                </td>
-          <td> <img src="{% static 'images/true.png' %}" class="pic"></td>
+          <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
           <td>
-              <form action="http://127.0.0.1:8000/team/blue/task6/" method="post" name="trueForm2">{%csrf_token%}
+              <form action="{% url 'task6' %}" method="post" name="trueForm2">{%csrf_token%}
                 <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
                 <input class="invisibleDiv"  value="2"  name="scoreAdd" >
                 <input class="invisibleDiv"  value="0"  name="helpdeduct" >
@@ -163,14 +164,15 @@
             <td><div class="feedbackox" >I think we made a fast decision. Data loss prevention will not help us, because the attack doesn’t cause data loss. 
                 Only enables attackers to propagate through the network.
                 <br>The link below can give you more information.
+                </div>
                   <br><form action="https://attack.mitre.org/techniques/T1021/002/" target="_blank"> 
                     <input type="submit" value="Find more!" class=" button button2"> </form>
 
              
-              </div></td>
-            <td> <img src="{% static 'images/fault.png' %}" class="pic1show"></td>
+              </td>
+            <td> <img src="{% static 'images/fault.png' %}" class="pic"></td>
             <td>
-                <form action="http://127.0.0.1:8000/team/blue/task6/" method="post" name="falseForm1">{%csrf_token%}
+                <form action="{% url 'task6' %}" method="post" name="falseForm1">{%csrf_token%}
                     <input class="invisibleDiv"  value="{{score}}" name="score">
                     <input class="invisibleDiv"  value="0"  name="scoreAdd" >
                     <input class="invisibleDiv"  value="2"  name="helpdeduct" >
@@ -187,13 +189,14 @@
               <td><div class="feedbackox" >This technique may be correct for other attacks but not this. 
                 Because the attack doesn’t target data availability or integrity. Only moving between devices.
                 <br>The link below can give you more information.
+            </div>
                   <br><form action="https://attack.mitre.org/techniques/T1021/002/" target="_blank"> 
                     <input type="submit" value="Find more!" class=" button button2"> </form>
                
-                </div></td>
-              <td> <img src="{% static 'images/fault.png' %}" class="pic1show"></td>
+                </td>
+              <td> <img src="{% static 'images/fault.png' %}" class="pic"></td>
               <td>
-                  <form action="http://127.0.0.1:8000/team/blue/task6/" method="post" name="falseForm2">{%csrf_token%}
+                  <form action="{% url 'task6' %}" method="post" name="falseForm2">{%csrf_token%}
                       <input class="invisibleDiv"  value="{{score}}" name="score">
                       <input class="invisibleDiv"  value="0"  name="scoreAdd" >
                       <input class="invisibleDiv"  value="2"  name="helpdeduct" >
@@ -209,9 +212,9 @@
         <tr width="100%">
               <td><div class="feedbackox">That is brilliant. We can filter the network traffic
                 by using the host firewall to restrict file sharing communications such as SMBs. As well as disable Windows administrative shares to limit access to the resource over network.</td>
-              <td> <img src="{% static 'images/true.png' %}" class="pic"></td>
+              <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
               <td>
-                  <form action="http://127.0.0.1:8000/team/blue/task6/" method="post" name="trueForm1">{%csrf_token%}
+                  <form action="{% url 'task6' %}" method="post" name="trueForm1">{%csrf_token%}
                     <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
                     <input class="invisibleDiv"  value="1"  name="scoreAdd" >
                     <input class="invisibleDiv"  value="0"  name="helpdeduct" >
@@ -227,9 +230,9 @@
         <tr width="100%">
               <td><div class="feedbackox"> This is a smart move. We can disable Windows administrative shares. As well as filtering the network traffic
                 by using the host firewall to restrict file sharing communications such as SMB. </td>
-              <td> <img src="{% static 'images/true.png' %}" class="pic"></td>
+              <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
               <td>
-                  <form action="http://127.0.0.1:8000/team/blue/task6/" method="post" name="trueForm2">{%csrf_token%}
+                  <form action="{% url 'task6' %}" method="post" name="trueForm2">{%csrf_token%}
                     <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
                     <input class="invisibleDiv"  value="1"  name="scoreAdd" >
                     <input class="invisibleDiv"  value="0"  name="helpdeduct" >
@@ -249,9 +252,9 @@
     
                  
                   </div></td>
-                <td> <img src="{% static 'images/fault.png' %}" class="pic1show"></td>
+                <td> <img src="{% static 'images/fault.png' %}" class="pic"></td>
                 <td>
-                    <form action="http://127.0.0.1:8000/team/blue/task6/" method="post" name="falseForm1">{%csrf_token%}
+                    <form action="{% url 'task6' %}" method="post" name="falseForm1">{%csrf_token%}
                         <input class="invisibleDiv"  value="{{score}}" name="score">
                         <input class="invisibleDiv"  value="0"  name="scoreAdd" >
                         <input class="invisibleDiv"  value="0"  name="helpdeduct" >
@@ -270,9 +273,9 @@
                     
                    
                     </div></td>
-                  <td> <img src="{% static 'images/fault.png' %}" class="pic1show"></td>
+                  <td> <img src="{% static 'images/fault.png' %}" class="pic"></td>
                   <td>
-                      <form action="http://127.0.0.1:8000/team/blue/task6/" method="post" name="falseForm2">{%csrf_token%}
+                      <form action="{% url 'task6' %}" method="post" name="falseForm2">{%csrf_token%}
                           <input class="invisibleDiv"  value="{{score}}" name="score">
                           <input class="invisibleDiv"  value="0"  name="scoreAdd" >
                           <input class="invisibleDiv"  value="0"  name="helpdeduct" >

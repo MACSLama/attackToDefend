@@ -13,31 +13,34 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from tkinter import N
 from django.contrib import admin
 from django.urls import path
-from theGame.views import main , team, tutorial, blue, task1, task2,task3,task4,task5,task6, task7,result, about , scoring
+from Game.views import main , team, tutorial, taskChoiceBlue,taskChoiceRed,blue1, blue2,task1, task2,task3,task4,task5,task6, task7,result, about , scoring, end
 from django.conf.urls.static import static
-from django.views.static import serve
-from django.conf.urls import url
-from django.conf import settings
+
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('about/', about),
-    path('scoring/', scoring),
-    path('', main),
-    path('team/',team),
+    path('about/', about, name="about"),
     path('tutorial/',tutorial),
-    path('team/blue/', blue),
-    path('team/blue/task1/', task1),
-    path('team/blue/task2/', task2),
-    path('team/blue/task3/', task3),
-    path('team/blue/task4/', task4),
-    path('team/blue/task5/', task5),
-    path('team/blue/task6/', task6),
-    path('team/blue/task7/', task7),
-    path('team/blue/result/', result),
-    url(r'^media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}), 
-    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}), 
+    path('scoring/', scoring, name="scoring"),
+    path('', main, name="main"),
+    path('team/',team, name="team"),
+    path('taskChoiceBlue/', taskChoiceBlue, name="taskChoiceBlue"),
+    path('taskChoiceRed/', taskChoiceRed, name="taskChoiceRed"),
+    path('blue1/', blue1, name="blue1"),
+    path('blue2/', blue2, name="blue2"),
+    path('task1/', task1 , name="task1"),
+    path('task2/', task2 , name="task2"),
+    path('task3/', task3, name="task3"),
+    path('task4/', task4, name="task4"),
+    path('task5/', task5, name="task5"),
+    path('task6/', task6, name="task6"),
+    path('task7/', task7, name="task7"),
+    path('result/', result, name="result"),
+    path('end/', end, name="end"),
 ]
+    
+    

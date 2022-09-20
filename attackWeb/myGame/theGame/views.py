@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from theGame.models import scoreRegester
+
 
 def main (request):
     
@@ -11,13 +11,29 @@ def team (request):
     
     return render (request , 'team.html')
 
+def end (request):
+        
+    return render (request , 'thanks.html')
+
 def tutorial (request):
     
     return render (request , 'toturial.html')
 
-def blue (request):
+def taskChoiceRed(request):
+
+    return render(request , 'taskChoiceRed.html')
+
+def taskChoiceBlue(request):
+
+    return render(request , 'taskChoiceBlue.html')
+
+def blue1 (request):
     
-    return render (request , 'blue.html')
+    return render (request , 'blue1.html')
+
+def blue2 (request):
+    
+    return render (request , 'blue2.html')
 
 def task1 (request):
     

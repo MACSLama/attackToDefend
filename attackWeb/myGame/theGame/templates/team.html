@@ -8,14 +8,14 @@
 
 
 <br> <br><br><br><br><br><br><br><br><br>
-<form action="http://127.0.0.1:8000/team/blue/">
+<form action="{% url 'taskChoiceBlue' %}">
     <input class="button button2" type="submit" value="Blue Team" >
 </form>
 
-<form action="">
+<form action="{% url 'taskChoiceRed' %}">
     <input type="submit" value="Red Team" class="button buttonred">
 </form>
 
-<form action="http://127.0.0.1:8000/">
+<form action="{% url 'main' %}">
     <input type="submit" value="Back" class="button buttongrey">
 </form>

@@ -6,7 +6,7 @@
 <table align="center" id="firstView" width="100%" height="50"> 
     <tr>
         <td colspan="2"  >
-            <div  ><img src="{% static 'images/manipulation.png' %}" class="pic1show"  ></div>
+            <div  ><img src="{% static 'images/manipulation.png' %}" class="pic"  ></div>
         </td>
         
         <td> 
@@ -40,7 +40,7 @@
 </table><table align="center" id="firstViewConf" width="100%" height="50" class="invisibleDiv"> 
     <tr>
         <td colspan="3"  >
-            <div  ><img src="{% static 'images/manipulation.png' %}" class="pic1show"  ></div>
+            <div  ><img src="{% static 'images/manipulation.png' %}" class="pic"  ></div>
         </td>
         
          <td> 
@@ -52,20 +52,20 @@
     </tr>
     <tr>
          <td>
-            <div class="choiceboxshow" > Domain administrator accounts management. <br><br>
-            <input type="button" value="Choose" onclick="feedbackTrue2Conf()" class=" button button2"></div>
+            <div class="choiceboxshow" > Domain administrator accounts management. <br><br></div>
+            <input type="button" value="Choose" onclick="feedbackTrue2Conf()" class=" button button2">
 
             <br>   
-            <div class="choiceboxshow" > Multi-factor Authentication. <br><br>
-            <input type="button" value="Choose" onclick="feedbackTrue1Conf()" class=" button button2"></div>
+            <div class="choiceboxshow" > Multi-factor Authentication. <br><br></div>
+            <input type="button" value="Choose" onclick="feedbackTrue1Conf()" class=" button button2">
            
          </td>
          <td>
-            <div class="choiceboxshow" > Boot Integrity.<br> <br><br> 
-             <input type="button" value="Choose" onclick="feedbackFalse2Conf()" class=" button button2"></div>
+            <div class="choiceboxshow" > Boot Integrity.<br> <br><br> </div> 
+             <input type="button" value="Choose" onclick="feedbackFalse2Conf()" class=" button button2">
              <br> 
-            <div class="choiceboxshow" > Data Loss Prevention.<br><br><br>
-             <input type="button" value="Choose" onclick="feedbackFalse1Conf()" class=" button button2"></div>
+            <div class="choiceboxshow" > Data Loss Prevention.<br><br><br></div>
+             <input type="button" value="Choose" onclick="feedbackFalse1Conf()" class=" button button2">
 
           </td>
     </tr>
@@ -75,7 +75,7 @@
 <table align="center" id="firstViewnotConf" class="invisibleDiv" width="100%" height="50"> 
     <tr>
         <td colspan="3"  >
-            <div  ><img src="{% static 'images/manipulation.png' %}" class="pic1show"  ></div>
+            <div  ><img src="{% static 'images/manipulation.png' %}" class="pic"  ></div>
         </td>
         
         <td> 
@@ -90,21 +90,21 @@
     </tr>
     <tr>
          <td>
-            <div class="choiceboxshow" > Domain administrator accounts management <br><br>
-            <input type="button" value="Choose" onclick="feedbackTrue2notConf()" class=" button button2"></div>
+            <div class="choiceboxshow" > Domain administrator accounts management <br><br></div>
+            <input type="button" value="Choose" onclick="feedbackTrue2notConf()" class=" button button2">
 
             <br>
-            <div class="choiceboxshow" > Multi-factor Authentication. <br><br>
-            <input type="button" value="Choose" onclick="feedbackTrue1notConf()" class=" button button2"></div>
+            <div class="choiceboxshow" > Multi-factor Authentication. <br><br></div>
+            <input type="button" value="Choose" onclick="feedbackTrue1notConf()" class=" button button2">
            
          </td>
          <td>
-            <div class="choiceboxshow" > Boot Integrity.<br> <br><br> 
-             <input type="button" value="Choose" onclick="feedbackFalse2notConf()" class=" button button2"></div>
+            <div class="choiceboxshow" > Boot Integrity.<br> <br><br> </div>
+             <input type="button" value="Choose" onclick="feedbackFalse2notConf()" class=" button button2">
 
              <br>
-            <div class="choiceboxshow" > Data Loss Prevention.<br><br><br>
-             <input type="button" value="Choose" onclick="feedbackFalse1notConf()" class=" button button2"></div>
+            <div class="choiceboxshow" > Data Loss Prevention.<br><br><br></div>
+             <input type="button" value="Choose" onclick="feedbackFalse1notConf()" class=" button button2">
 
           </td>
     </tr>
@@ -114,11 +114,11 @@
 <table id="true1Conf" class="invisibleDiv" width="100%" align="center">
     <tr width="100%">
           <td><div class="feedbackox">This is very important for users, especially for those with privileged accounts.<br> As well as accounts management for the administrator 
-            to prevent exposing them to potential adversaries on unprivileged systems.  <br> <form action="https://attack.mitre.org/techniques/T1098/" target="_blank"> 
+            to prevent exposing them to potential adversaries on unprivileged systems. </div> <br> <form action="https://attack.mitre.org/techniques/T1098/" target="_blank"> 
             <input type="submit" value="Find more!" class=" button button2"> </form> </td>
-          <td> <img src="{% static 'images/true.png' %}" class="pic"></td>
+          <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
           <td>
-              <form action="http://127.0.0.1:8000/team/blue/task5/" method="post" name="trueForm1">{%csrf_token%}
+              <form action="{% url 'task5' %}" method="post" name="trueForm1">{%csrf_token%}
                 <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
                 <input class="invisibleDiv"  value="2"  name="scoreAdd" >
                 <input class="invisibleDiv"  value="0"  name="helpdeduct" >
@@ -133,12 +133,12 @@
   <table id="true2Conf" class="invisibleDiv" width="100%" align="center">
     <tr width="100%">
           <td><div class="feedbackox"> This is a smart move.<br> Domain administrator accounts should not be allowed to be used for day-to-day operations. This may expose them to potential adversaries on unprivileged systems.
-            Also Multi-factor Authentication. is very important for users, especially for those with privileged accounts. 
+            Also Multi-factor Authentication. is very important for users, especially for those with privileged accounts. </div>
             <br> <form action="https://attack.mitre.org/techniques/T1098/" target="_blank"> 
                 <input type="submit" value="Find more!" class=" button button2"> </form> </td>
-          <td> <img src="{% static 'images/true.png' %}" class="pic"></td>
+          <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
           <td>
-              <form action="http://127.0.0.1:8000/team/blue/task5/" method="post" name="trueForm2">{%csrf_token%}
+              <form action="{% url 'task5' %}" method="post" name="trueForm2">{%csrf_token%}
                 <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
                 <input class="invisibleDiv"  value="2"  name="scoreAdd" >
                 <input class="invisibleDiv"  value="0"  name="helpdeduct" >
@@ -153,15 +153,15 @@
   
   <table id="false1Conf" class="invisibleDiv" width="100%" align="center">
       <tr width="50%">
-            <td><div class="feedbackox" >Data loss prevention stops adversaries from stealing information from the system, it has nothing to do with securing accounts.  
+            <td><div class="feedbackox" >Data loss prevention stops adversaries from stealing information from the system, it has nothing to do with securing accounts. </div> 
                 <br><form action="https://attack.mitre.org/techniques/T1098/" target="_blank"> 
                     <input type="submit" value="Find more!" class=" button button2"> </form>
 
              
-              </div></td>
-            <td> <img src="{% static 'images/fault.png' %}" class="pic1show"></td>
+              </td>
+            <td> <img src="{% static 'images/fault.png' %}" class="pic"></td>
             <td>
-                <form action="http://127.0.0.1:8000/team/blue/task5/" method="post" name="falseForm1">{%csrf_token%}
+                <form action="{% url 'task5' %}" method="post" name="falseForm1">{%csrf_token%}
                     <input class="invisibleDiv"  value="{{score}}" name="score">
                     <input class="invisibleDiv"  value="0"  name="scoreAdd" >
                     <input class="invisibleDiv"  value="2"  name="helpdeduct" >
@@ -176,14 +176,14 @@
     <table id="false2Conf" class="invisibleDiv" width="100%" align="center">
         <tr width="50%">
               <td><div class="feedbackox" >We should have thought this through. <br> Account manipulation may happen on a valid booted system. Boot integrity will not secure a system from account manipulation.<br>
-                The link below can give you more information.  
+                The link below can give you more information.  </div>
                 <br><form action="https://attack.mitre.org/techniques/T1098/" target="_blank"> 
                     <input type="submit" value="Find more!" class=" button button2"> </form>
                
-                </div></td>
-              <td> <img src="{% static 'images/fault.png' %}" class="pic1show"></td>
+                </td>
+              <td> <img src="{% static 'images/fault.png' %}" class="pic"></td>
               <td>
-                  <form action="http://127.0.0.1:8000/team/blue/task5/" method="post" name="falseForm2">{%csrf_token%}
+                  <form action="{% url 'task5' %}" method="post" name="falseForm2">{%csrf_token%}
                       <input class="invisibleDiv"  value="{{score}}" name="score">
                       <input class="invisibleDiv"  value="0"  name="scoreAdd" >
                       <input class="invisibleDiv"  value="2"  name="helpdeduct" >
@@ -197,11 +197,11 @@
       </table>
       <table id="true1notConf" class="invisibleDiv" width="100%" align="center">
         <tr width="100%">
-              <td><div class="feedbackox">TThis is very important for users, especially for those with privileged accounts.<br> As well as accounts management for the administrator 
+              <td><div class="feedbackox">This is very important for users, especially for those with privileged accounts.<br> As well as accounts management for the administrator 
                 to prevent exposing them to potential adversaries on unprivileged systems. <br> </td>
-              <td> <img src="{% static 'images/true.png' %}" class="pic"></td>
+              <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
               <td>
-                  <form action="http://127.0.0.1:8000/team/blue/task5/" method="post" name="trueForm1">{%csrf_token%}
+                  <form action="{% url 'task5' %}" method="post" name="trueForm1">{%csrf_token%}
                     <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
                     <input class="invisibleDiv"  value="1"  name="scoreAdd" >
                     <input class="invisibleDiv"  value="0"  name="helpdeduct" >
@@ -217,9 +217,9 @@
         <tr width="100%">
               <td><div class="feedbackox"> This is a smart move.<br> Domain administrator accounts should not be allowed to be used for day-to-day operations. This may expose them to potential adversaries on unprivileged systems.
                 Also Multi-factor Authentication. is very important for users, especially for those with privileged accounts. </td>
-              <td> <img src="{% static 'images/true.png' %}" class="pic"></td>
+              <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
               <td>
-                  <form action="http://127.0.0.1:8000/team/blue/task5/" method="post" name="trueForm2">{%csrf_token%}
+                  <form action="{% url 'task5' %}" method="post" name="trueForm2">{%csrf_token%}
                     <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
                     <input class="invisibleDiv"  value="1"  name="scoreAdd" >
                     <input class="invisibleDiv"  value="0"  name="helpdeduct" >
@@ -238,9 +238,9 @@
     
                  
                   </div></td>
-                <td> <img src="{% static 'images/fault.png' %}" class="pic1show"></td>
+                <td> <img src="{% static 'images/fault.png' %}" class="pic"></td>
                 <td>
-                    <form action="http://127.0.0.1:8000/team/blue/task5/" method="post" name="falseForm1">{%csrf_token%}
+                    <form action="{% url 'task5' %}" method="post" name="falseForm1">{%csrf_token%}
                         <input class="invisibleDiv"  value="{{score}}" name="score">
                         <input class="invisibleDiv"  value="0"  name="scoreAdd" >
                         <input class="invisibleDiv"  value="0"  name="helpdeduct" >
@@ -254,12 +254,12 @@
         </table>
         <table id="false2notConf" class="invisibleDiv" width="100%" align="center">
             <tr width="50%">
-                  <td><div class="feedbackox" >We should have thought this through. <br> Account manipulation may happen on a valid booted system. Boot integrity will not secure a system from account manipulation.br>
+                  <td><div class="feedbackox" >We should have thought this through. <br> Account manipulation may happen on a valid booted system. Boot integrity will not secure a system from account manipulation.<br>
                    
                     </div></td>
-                  <td> <img src="{% static 'images/fault.png' %}" class="pic1show"></td>
+                  <td> <img src="{% static 'images/fault.png' %}" class="pic"></td>
                   <td>
-                      <form action="http://127.0.0.1:8000/team/blue/task5/" method="post" name="falseForm2">{%csrf_token%}
+                      <form action="{% url 'task5' %}" method="post" name="falseForm2">{%csrf_token%}
                           <input class="invisibleDiv"  value="{{score}}" name="score">
                           <input class="invisibleDiv"  value="0"  name="scoreAdd" >
                           <input class="invisibleDiv"  value="0"  name="helpdeduct" >

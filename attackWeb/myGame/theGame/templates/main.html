@@ -2,15 +2,15 @@
 
 <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
 <body id="bg" class="tdStylemain">
-   
+   <div class="webContainer">
     
- <form action="http://127.0.0.1:8000/team/">
+ <form action="{% url 'scoring' %}">
  <input class="button button2" type="submit" value="Play"  >
  </form>
 
- <form action="http://127.0.0.1:8000/tutorial/">
-    <input class="button button2" type="submit" value="Tutorial"  >
+ <form action="{% url 'about' %}">
+    <input class="button button2" type="submit" value="About the game"  >
     </form>
-   
+</div> 
 
 </body>

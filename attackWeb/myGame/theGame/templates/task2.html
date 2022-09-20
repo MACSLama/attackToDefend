@@ -69,7 +69,7 @@
          </td>
          <td>
             <div class="choiceBoxshow" > <br>  Limit Hardware Installation and Limit privileges of user accounts and groups.</div>
-             <input type="button" value="Choose" onclick="feedbackFalsen()" class=" button button2">
+             <input type="button" value="Choose" onclick="feedbackFalsenotConf()" class=" button button2">
 
           </td>
     </tr>
@@ -111,13 +111,14 @@
 
 <table id="trueConf" class="invisibleDiv" width="100%" align="center">
     <tr width="100%">
-          <td><div class="feedbackox"> You are correct, Good job!!<br>Limiting privileges for users allows only authorized administrators to interact with service changes and service configurations.<br>
-            If any unauthorized user had these privileges, the auditing tools will detect it and pan it.<br><form action="https://attack.mitre.org/techniques/T1543/003/" target="_blank"> 
+          <td><div class="choiceboxshow"> You are correct, Good job!!<br>Limiting privileges for users allows only authorized administrators to interact with service changes and service configurations.<br>
+            If any unauthorized user had these privileges, the auditing tools will detect it and pan it.<br></div>
+            <form action="https://attack.mitre.org/techniques/T1543/003/" target="_blank"> 
                                         <input type="submit" value="Find more!" class=" button button2"> </form> </td>
           <td><div class="invisibleDiv"></div> </td>
-          <td> <img src="{% static 'images/true.png' %}" class="pic"></td>
+          <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
           <td>
-              <form action="http://127.0.0.1:8000/team/blue/task3/" method="post" name="trueForm">{%csrf_token%}
+              <form action="{% url 'task3' %}" method="post" name="trueForm">{%csrf_token%}
                 <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
                 <input class="invisibleDiv"  value="2"  name="scoreAdd" >
                 <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
@@ -134,16 +135,16 @@
   
   <table id="falseConf" class="invisibleDiv" width="100%" align="center">
       <tr width="50%">
-            <td><div class="feedbackox" >That was not the right decision. <br> If adversaries are trying to increase their privileges, 
-                this means that they already have access to the system, and limiting Hardware Installation will not help at this stage.<br> The link below can give you more information.  
+            <td><div class="choiceboxshow" >That was not the right decision. <br> If adversaries are trying to increase their privileges, 
+                this means that they already have access to the system, and limiting Hardware Installation will not help at this stage.<br> The link below can give you more information.</div>  
                 <br><form action="https://attack.mitre.org/techniques/T1543/003/" target="_blank"> 
                     <input type="submit" value="Find more!" class=" button button2"> </form> 
 
              
-              </div></td>
-            <td> <img src="{% static 'images/fault.png' %}" class="pic1show"></td>
+              </td>
+            <td> <img src="{% static 'images/fault.png' %}" class="pic"></td>
             <td>
-                <form action="http://127.0.0.1:8000/team/blue/task3/"  method="post" name="falseForm">{%csrf_token%}
+                <form action="{% url 'task3' %}"  method="post" name="falseForm">{%csrf_token%}
                     <input class="invisibleDiv"  value="{{score}}" name="score">
                     <input class="invisibleDiv"  value="0"  name="scoreAdd" >
                     <input class="invisibleDiv"  value="2" id="deductCost"  name="helpdeduct" >
@@ -157,12 +158,12 @@
 
     <table id="truenotConf" class="invisibleDiv" width="100%" align="center">
         <tr width="100%">
-              <td><div class="feedbackox"> You are correct, Good job!!<br>Limiting privileges for users allows only authorized administrators to interact with service changes and service configurations.<br>
+              <td><div class="choiceboxshow"> You are correct, Good job!!<br>Limiting privileges for users allows only authorized administrators to interact with service changes and service configurations.<br>
                 If any unauthorized user had these privileges, the auditing tools will detect it and pan it. </td>
               <td><div class="invisibleDiv"></div> </td>
-              <td> <img src="{% static 'images/true.png' %}" class="pic"></td>
+              <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
               <td>
-                  <form action="http://127.0.0.1:8000/team/blue/task3/" method="post" name="trueForm">{%csrf_token%}
+                  <form action="{% url 'task3' %}" method="post" name="trueForm">{%csrf_token%}
                     <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
                     <input class="invisibleDiv"  value="1"  name="scoreAdd" >
                     <input class="invisibleDiv"  value="0" id="deductCost"  name="helpdeduct" >
@@ -179,14 +180,14 @@
       
       <table id="falsenotConf" class="invisibleDiv" width="100%" align="center">
           <tr width="50%">
-                <td><div class="feedbackox" >That was not the right decision. <br> If adversaries are trying to increase their privileges, 
+                <td><div class="choiceboxshow" >That was not the right decision. <br> If adversaries are trying to increase their privileges, 
                     this means that they already have access to the system, and limiting Hardware Installation will not help at this stage. 
     
                  
                   </div></td>
-                <td> <img src="{% static 'images/fault.png' %}" class="pic1show"></td>
+                <td> <img src="{% static 'images/fault.png' %}" class="pic"></td>
                 <td>
-                    <form action="http://127.0.0.1:8000/team/blue/task3/"  method="post" name="falseForm">{%csrf_token%}
+                    <form action="{% url 'task3' %}"  method="post" name="falseForm">{%csrf_token%}
                         <input class="invisibleDiv"  value="{{score}}" name="score">
                         <input class="invisibleDiv"  value="0"  name="scoreAdd" >
                         <input class="invisibleDiv"  value="0" id="deductCost"  name="helpdeduct" >

@@ -18,8 +18,19 @@
            
         </tr>
         <tr>
-            <td colspan="2">
+            <td >
                 <img src="{% static 'images/giphy.gif' %}" class="pic1show"  >
+            </td>
+            <td>
+                <form action="{% url 'blue1' %}" method="post" >{%csrf_token%}
+                    <input type="submit" value="Re-play?" class=" button button2" >  
+                </form>
+                <form action="{% url 'team' %}" method="post" >{%csrf_token%}
+                    <input type="submit" value="New Mession!" class=" button button2" >  
+                    <form action="{% url 'end' %}" method="post" >{%csrf_token%}
+                        <input type="submit" value="Quit!" class=" button button2" >  
+                    </form>
+                </form>
             </td>
         </tr>
     </table>
@@ -42,8 +53,19 @@
             
         </tr>
         <tr>
-            <td colspan="2">
+            <td >
                 <img src="{% static 'images/fine.gif' %}" class="pic1show"  >
+            </td>
+            <td>
+                <form action="{% url 'blue1' %}" method="post" >{%csrf_token%}
+                    <input type="submit" value="Re-play?" class=" button button2" >  
+                </form>
+                <form action="{% url 'team' %}" method="post" >{%csrf_token%}
+                    <input type="submit" value="New Mession!" class=" button button2" >  
+                </form>
+                <form action="{% url 'end' %}" method="post" >{%csrf_token%}
+                    <input type="submit" value="Quit!" class=" button button2" >  
+                </form>
             </td>
         </tr>
     </table>
@@ -63,8 +85,19 @@
                Thanks for trying helping me, but let's hope I don't lose my job.
             </div>
         </td>
-        <td colspan="2">
+        <td >
             <img src="{% static 'images/lose.gif' %}" class="pic1show"  >
+        </td>
+        <td>
+            <form action="{% url 'blue1' %}" method="post" >{%csrf_token%}
+                <input type="submit" value="Re-play?" class=" button button2" >  
+            </form>
+            <form action="{% url 'team' %}" method="post" >{%csrf_token%}
+                <input type="submit" value="New Mession!" class=" button button2" >  
+            </form>
+            <form action="{% url 'end' %}" method="post" >{%csrf_token%}
+                <input type="submit" value="Quit!" class=" button button2" >  
+            </form>
         </td>
      
     </tr>

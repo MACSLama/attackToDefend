@@ -7,7 +7,7 @@
 <table align="center" id="firstView" width="100%" height="50"> 
     <tr>
         <td colspan="2"  >
-            <div  ><img src="{% static 'images/creDintials.png' %}" class="pic1show"  ></div>
+            <div ><img src="{% static 'images/creDintials.png' %}" class="pic"  ></div>
         </td>
         
          <td> 
@@ -46,7 +46,7 @@
 <table align="center" id="firstViewConf" width="100%" height="50" class="invisibleDiv"> 
     <tr>
         <td colspan="3"  >
-            <div  ><img src="{% static 'images/creDintials.png' %}" class="pic1show"  ></div>
+            <div  ><img src="{% static 'images/creDintials.png' %}" class="pic"  ></div>
         </td>
         
          <td> 
@@ -56,21 +56,21 @@
     </tr>
     <tr>
          <td>
-            <div class="choiceboxshow" > Network Intrusion Prevention. <br><br>
-            <input type="button" value="Choose" onclick="feedbackFalse1Conf()" class=" button button2"></div>
+            <div class="choiceboxshow" > Network Intrusion Prevention. <br><br></div>
+            <input type="button" value="Choose" onclick="feedbackFalse1Conf()" class=" button button2">
 
             <br><br><br>  
-            <div class="choiceboxshow" > Force password policies. <br><br><br>
-            <input type="button" value="Choose" onclick="feedbackTrue1Conf()" class=" button button2"></div>
+            <div class="choiceboxshow" > Force password policies. <br><br><br> </div>
+            <input type="button" value="Choose" onclick="feedbackTrue1Conf()" class=" button button2">
            
          </td>
          <td>
-            <div class="choiceboxshow" > Data Backup.<br> <br><br> 
-             <input type="button" value="Choose" onclick="feedbackFalse2Conf()" class=" button button2"></div>
+            <div class="choiceboxshow" > Data Backup.<br> <br><br> </div>
+            <input type="button" value="Choose" onclick="feedbackFalse2Conf()" class=" button button2">
 
              <br><br><br> 
-            <div class="choiceboxshow" > Encrypt Sensitive Information.<br><br>
-             <input type="button" value="Choose" onclick="feedbackTrue2Conf()" class=" button button2"></div>
+            <div class="choiceboxshow" > Encrypt Sensitive Information.<br><br></div>
+            <input type="button" value="Choose" onclick="feedbackTrue2Conf()" class=" button button2">
 
           </td>
     </tr>
@@ -79,7 +79,7 @@
 <table align="center" id="firstViewnotConf" width="100%" height="50" class="invisibleDiv"> 
     <tr>
         <td colspan="3"  >
-            <div  ><img src="{% static 'images/creDintials.png' %}" class="pic1show"  ></div>
+            <div  ><img src="{% static 'images/creDintials.png' %}" class="pic"  ></div>
         </td>
         
         <td> 
@@ -94,21 +94,21 @@
     </tr>
     <tr>
          <td>
-            <div class="choiceboxshow" > Network Intrusion Prevention. <br><br>
-            <input type="button" value="Choose" onclick="feedbackFalse1notConf()" class=" button button2"></div>
+            <div class="choiceboxshow" > Network Intrusion Prevention. <br><br></div>
+            <input type="button" value="Choose" onclick="feedbackFalse1notConf()" class=" button button2">
 
             <br><br><br> 
-            <div class="choiceboxshow" > Force password policies. <br><br><br>
-            <input type="button" value="Choose" onclick="feedbackTrue1notConf()" class=" button button2"></div>
+            <div class="choiceboxshow" > Force password policies. <br><br><br> </div>
+            <input type="button" value="Choose" onclick="feedbackTrue1notConf()" class=" button button2">
            
          </td>
          <td>
-            <div class="choiceboxshow" > Data Backup.<br> <br><br> 
-             <input type="button" value="Choose" onclick="feedbackFalse2notConf()" class=" button button2"></div>
+            <div class="choiceboxshow" > Data Backup.<br> <br><br> </div>
+             <input type="button" value="Choose" onclick="feedbackFalse2notConf()" class=" button button2">
 
              <br><br><br> 
-            <div class="choiceboxshow" > Encrypt Sensitive Information.<br><br>
-             <input type="button" value="Choose" onclick="feedbackTrue2notConf()" class=" button button2"></div>
+            <div class="choiceboxshow" > Encrypt Sensitive Information.<br><br></div>
+             <input type="button" value="Choose" onclick="feedbackTrue2notConf()" class=" button button2">
 
           </td>
     </tr>
@@ -117,13 +117,14 @@
 
 <table id="true1Conf" class="invisibleDiv" width="100%" align="center">
     <tr width="100%">
-          <td><div class="feedbackox">That is correct, especially for local administrator accounts, <br>
+          <td><div class="choiceboxshow">That is correct, especially for local administrator accounts, <br>
             they should have complex, unique passwords across all systems on the network.<br> Also, Encrypt Sensitive Information is a smart move in this case. 
-        To make sure that the data is safe even if adversaries reached to it.<br> <form action="https://attack.mitre.org/techniques/T1003/" target="_blank"> 
+        To make sure that the data is safe even if adversaries reached to it.<br> </div>
+         <form action="https://attack.mitre.org/techniques/T1003/" target="_blank"> 
             <input type="submit" value="Find more!" class=" button button2"> </form></td>
-          <td> <img src="{% static 'images/true.png' %}" class="pic"></td>
+          <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
           <td>
-              <form action="http://127.0.0.1:8000/team/blue/task4/" method="post" >{%csrf_token%}
+              <form action="{% url 'task4' %}" method="post" >{%csrf_token%}
                 <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
                 <input class="invisibleDiv"  value="2"  name="scoreAdd" >
                 <input class="invisibleDiv"  value="0"  name="helpdeduct" >
@@ -137,12 +138,12 @@
   </table>
   <table id="true2Conf" class="invisibleDiv" width="100%" align="center">
     <tr width="100%">
-          <td><div class="feedbackox"> Great decision. This ensures Domain Controller backups are properly secured.<br> Also, there should be passwords policies,
-            so that local administrator accounts have complex, unique passwords across all systems on the network.<br> <form target="_blank" action="https://attack.mitre.org/techniques/T1003/"> 
+          <td><div class="choiceboxshow"> Great decision. This ensures Domain Controller backups are properly secured.<br> Also, there should be passwords policies,
+            so that local administrator accounts have complex, unique passwords across all systems on the network.<br></div> <form target="_blank" action="https://attack.mitre.org/techniques/T1003/"> 
                 <input type="submit" value="Find more!" class=" button button2"> </form> </td>
-          <td> <img src="{% static 'images/true.png' %}" class="pic"></td>
+          <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
           <td>
-              <form action="http://127.0.0.1:8000/team/blue/task4/" method="post" >{%csrf_token%}
+              <form action="{% url 'task4' %}" method="post" >{%csrf_token%}
                 <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
                 <input class="invisibleDiv"  value="2"  name="scoreAdd" >
                 <input class="invisibleDiv"  value="0"  name="helpdeduct" >
@@ -157,16 +158,16 @@
   
   <table id="false1Conf" class="invisibleDiv" width="100%" align="center">
       <tr width="50%">
-            <td><div class="feedbackox" >This is a lot of work, and out of preventing credential stealing domain.<br> Unfortunately that was not a wise choice.
-                The link below can give you more information.  
+            <td><div class="choiceboxshow" >This is a lot of work, and out of preventing credential stealing domain.<br> Unfortunately that was not a wise choice.
+                The link below can give you more information.  </div>
                 <br><form action="https://attack.mitre.org/techniques/T1003/" target="_blank"> 
                     <input type="submit" value="Find more!" class=" button button2"> </form>
 
              
-              </div></td>
-            <td> <img src="{% static 'images/fault.png' %}" class="pic1show"></td>
+              </td>
+            <td> <img src="{% static 'images/fault.png' %}" class="pic"></td>
             <td>
-                <form action="http://127.0.0.1:8000/team/blue/task4/" method="post" >{%csrf_token%}
+                <form action="{% url 'task4' %}" method="post" >{%csrf_token%}
                     <input class="invisibleDiv"  value="{{score}}" name="score">
                     <input class="invisibleDiv"  value="0"  name="scoreAdd" >
                     <input class="invisibleDiv"  value="2"  name="helpdeduct" >
@@ -180,15 +181,15 @@
     </table>
     <table id="false2Conf" class="invisibleDiv" width="100%" align="center">
         <tr width="50%">
-              <td><div class="feedbackox" >We should have thought this through. <br> Data backup will secure data from any loss, but will not prevent adversaries from stealing credentials.<br>
-                The link below can give you more information.  
+              <td><div class="choiceboxshow" >We should have thought this through. <br> Data backup will secure data from any loss, but will not prevent adversaries from stealing credentials.<br>
+                The link below can give you more information. </div> 
                 <br><form action="https://attack.mitre.org/techniques/T1003/" target="_blank"> 
                     <input type="submit" value="Find more!" class=" button button2"> </form>
                
-                </div></td>
-              <td> <img src="{% static 'images/fault.png' %}" class="pic1show"></td>
+                </td>
+              <td> <img src="{% static 'images/fault.png' %}" class="pic"></td>
               <td>
-                  <form action="http://127.0.0.1:8000/team/blue/task4/" method="post" >{%csrf_token%}
+                  <form action="{% url 'task4' %}" method="post" >{%csrf_token%}
                       <input class="invisibleDiv"  value="{{score}}" name="score">
                       <input class="invisibleDiv"  value="0"  name="scoreAdd" >
                       <input class="invisibleDiv"  value="2"  name="helpdeduct" >
@@ -202,12 +203,12 @@
       </table>
       <table id="true1notConf" class="invisibleDiv" width="100%" align="center">
         <tr width="100%">
-              <td><div class="feedbackox">That is correct, especially for local administrator accounts, <br>
+              <td><div class="choiceboxshow">That is correct, especially for local administrator accounts, <br>
                 they should have complex, unique passwords across all systems on the network.<br> Also, Encrypt Sensitive Information is a smart move in this case. 
             To make sure that the data is safe even if adversaries reached to it.<br> </td>
-              <td> <img src="{% static 'images/true.png' %}" class="pic"></td>
+              <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
               <td>
-                  <form action="http://127.0.0.1:8000/team/blue/task4/" method="post" >{%csrf_token%}
+                  <form action="{% url 'task4' %}" method="post" >{%csrf_token%}
                     <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
                     <input class="invisibleDiv"  value="1"  name="scoreAdd" >
                     <input class="invisibleDiv"  value="0"  name="helpdeduct" >
@@ -221,11 +222,11 @@
       </table>
       <table id="true2notConf" class="invisibleDiv" width="100%" align="center">
         <tr width="100%">
-              <td><div class="feedbackox">Great decision. This ensures Domain Controller backups are properly secured.<br> Also, there should be passwords policies,
+              <td><div class="choiceboxshow">Great decision. This ensures Domain Controller backups are properly secured.<br> Also, there should be passwords policies,
                 so that local administrator accounts have complex, unique passwords across all systems on the network. </td>
-              <td> <img src="{% static 'images/true.png' %}" class="pic"></td>
+              <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
               <td>
-                  <form action="http://127.0.0.1:8000/team/blue/task4/" method="post" >{%csrf_token%}
+                  <form action="{% url 'task4' %}" method="post" >{%csrf_token%}
                     <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
                     <input class="invisibleDiv"  value="1"  name="scoreAdd" >
                     <input class="invisibleDiv"  value="0"  name="helpdeduct" >
@@ -240,14 +241,14 @@
       
       <table id="false1notConf" class="invisibleDiv" width="100%" align="center">
           <tr width="50%">
-                <td><div class="feedbackox" >This is a lot of work, and out of preventing credential stealing domain.<br> Unfortunately that was not a wise choice.
+                <td><div class="choiceboxshow" >This is a lot of work, and out of preventing credential stealing domain.<br> Unfortunately that was not a wise choice.
                     
     
                  
                   </div></td>
-                <td> <img src="{% static 'images/fault.png' %}" class="pic1show"></td>
+                <td> <img src="{% static 'images/fault.png' %}" class="pic"></td>
                 <td>
-                    <form action="http://127.0.0.1:8000/team/blue/task4/" method="post" >{%csrf_token%}
+                    <form action="{% url 'task4' %}" method="post" >{%csrf_token%}
                         <input class="invisibleDiv"  value="{{score}}" name="score">
                         <input class="invisibleDiv"  value="0"  name="scoreAdd" >
                         <input class="invisibleDiv"  value="0"  name="helpdeduct" >
@@ -261,12 +262,12 @@
         </table>
         <table id="false2notConf" class="invisibleDiv" width="100%" align="center">
             <tr width="50%">
-                  <td><div class="feedbackox" >We should have thought this through. <br> Data backup will secure data from any loss, but will not prevent adversaries from stealing credentials.  <br>
+                  <td><div class="choiceboxshow" >We should have thought this through. <br> Data backup will secure data from any loss, but will not prevent adversaries from stealing credentials.  <br>
                    
                     </div></td>
-                  <td> <img src="{% static 'images/fault.png' %}" class="pic1show"></td>
+                  <td> <img src="{% static 'images/fault.png' %}" class="pic"></td>
                   <td>
-                      <form action="http://127.0.0.1:8000/team/blue/task4/" method="post" >{%csrf_token%}
+                      <form action="{% url 'task4' %}" method="post" >{%csrf_token%}
                           <input class="invisibleDiv"  value="{{score}}" name="score">
                           <input class="invisibleDiv"  value="0"  name="scoreAdd" >
                           <input class="invisibleDiv"  value="0"  name="helpdeduct" >

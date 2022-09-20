@@ -3,31 +3,78 @@
 <body id="bg" class="back"></body>
 
 <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+<table>
+    <tr>
+        <td>
+            <div  class="about" id="scoring1"><img src="{% static 'images/scoring1.png' %}" class="pic">
+                <br>
+                <br>
+                <br>
+                <input type="submit" value="Next" class=" button button2" onclick="next1()">
+                </div>
+        </td>
+    </tr>
+</table>
 
 
-
-<div class="about">
-    In this game, the scoring technique depends on a confident factor. <br>
-    Before answering the question, the players should reply whether they are confident with their answer or that they are not so sure and need help.<br>
-    If the player is confident and chose the correct answer, then he/she will gain 2 points. But if the answer was wrong he/she will be fined 2 points.<br>
-    meanwhile, if the player was not so sure and asked for help. He/she will be directed to a page with a hint option. <br>
-    if the answer then was correct, the player will gain 1 point, and if wrong, no deduction will happen. 
+<div class="invisibleDiv" id="scoring1Backup">
+    <img src="{% static 'images/scoring1.png' %}" class="pic">
     <br>
-    This method encourages the player to seek help and search more before answering. 
+    <input type="submit" value="Next" class=" button button2" onclick="next1()">
+    </div>
+<div class="invisibleDiv" id="scoring2">
+    <img src="{% static 'images/scoring2.png' %}" class="pic">
+    <br>
+    <br>
+    <input type="submit" value="Back" class=" button button2" onclick="back1()">
+    <input type="submit" value="Next" class=" button button2" onclick="next2()">
 
 </div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<form action="http://127.0.0.1:8000/tutorial/" method="post" >{%csrf_token%}
-    <input type="submit" value="Back" class=" button buttongrey">
-  </form>
+<div class="invisibleDiv" id="scoring2Backup">
+    <img src="{% static 'images/scoring2.png' %}" class="pic">
+    <br>
+    <br>
+    <input type="submit" value="Back" class=" button button2" onclick="back1()">
+    <input type="submit" value="Next" class=" button button2" onclick="next2()">
+
+</div>
+<div class="invisibleDiv" id="scoring3">
+    <img src="{% static 'images/scoring3.png' %}" class="pic"><br><br>
+    <input type="submit" value="Back" class=" button button2" onclick="back2()">
+    <form action="{% url 'team' %}" method="post" >{%csrf_token%}
+        <input type="submit" value="Play" class=" button button2" >  
+    </form>
+   
+    
+
+</div>
+
+
+
+
+<script>
+function next1(){
+
+  document.getElementById("scoring1").innerHTML = document.getElementById("scoring2").innerHTML ;
+
+
+}
+function back1(){
+
+document.getElementById("scoring1").innerHTML = document.getElementById("scoring1Backup").innerHTML ;
+
+
+}
+function next2(){
+
+document.getElementById("scoring1").innerHTML = document.getElementById("scoring3").innerHTML ;
+
+
+}
+function back2(){
+
+document.getElementById("scoring1").innerHTML = document.getElementById("scoring2Backup").innerHTML ;
+
+
+}
+</script>

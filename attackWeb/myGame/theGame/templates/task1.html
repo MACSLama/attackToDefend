@@ -4,18 +4,14 @@
 
 <table id="firstView" align="center">
     <tr> 
-        <td  width="50%">
-            <div></div>
-        </td>
+    
         <td width="50%">
-            <img src="{% static 'images/attack.png' %}" class="pic1show" id="1">
+            <div class="about">
+            <img src="{% static 'images/attac.png' %}" class="pic" id="1">
+        </div>
         </td>
-    </tr>
-    <tr>
-        <td width="50%" >
-            <div></div>
-        </td>
-        <td width="50%" > 
+        <td width="50%" height="auto%"></td>
+        <td float="right" > 
             <input id="1to2" type="button" value="Next" onclick="view()" class=" button button2">
         </td>
 
@@ -28,18 +24,18 @@
 
 <table id="firstViewBackup" class="invisibleDiv" align="center">
     <tr> 
-        <td  width="50%">
-            <div></div>
-        </td>
+      
         <td width="50%">
-            <img src="{% static 'images/attack.png' %}" class="pic1show" id="1">
+            <div class="about">
+            
+                <img src="{% static 'images/attac.png' %}" class="pic" id="1">
+            </div>
         </td>
-    </tr>
-    <tr>
+
         <td width="50%" >
             
         </td>
-        <td width="50%" > 
+        <td float="right" > 
             <input id="1to2" type="button" value="Next" onclick="view()" class=" button button2">
         </td>
 
@@ -48,16 +44,15 @@
 
 <table id="secondView" class="invisibleDiv" align="center">
     <tr>
+        
         <td width="50%">
-            
+            <div class="about">
+            <img src="{% static 'images/pic1.png' %}" class="pic">
+         </div>
         </td>
-        <td width="50%">
-            <img src="{% static 'images/piC1.png' %}" class="pic1show">
-        </td>
-    </tr>
-    <tr>
-        <td width="50%"></td>
-        <td width="50%">
+   
+        <td width="50%" height="auto%"></td>
+        <td float="right">
             <input id="2to1" type="button" value="Back" onclick="viewBack()" class=" button button2"> 
             <input id="2to3" type="button" value="Next" onclick="view2()" class=" button button2">
         </td>
@@ -66,9 +61,11 @@
 </table>
 
 <table id="thrdviewAskConf" class="invisibleDiv" width="100%" align="center">
-    <tr height="30%">
+    <tr>
         <td colspan="3">
-            <img src="{% static 'images/pic2.png' %}" class="table">
+           
+              <img src="{% static 'images/piC2.png' %}" class="pic">
+            
         </td>
    
        
@@ -106,7 +103,7 @@
 
 
         </td>
-        <td><img src="{% static 'images/pic2.png' %}" class="table"></td>
+        <td><img src="{% static 'images/piC2.png' %}" class="table"></td>
     </tr>
    
 
@@ -115,7 +112,7 @@
 <table id="thrdviewNotConf" class="invisibleDiv" width="100%" align="center">
     <tr height="30%">
         <td colspan="3">
-            <img src="{% static 'images/pic2.png' %}" class="table">
+            <img src="{% static 'images/piC2.png' %}" class="table">
         </td>
         
         
@@ -148,16 +145,20 @@
 <table id="trueConf" class="invisibleDiv" width="100%" align="center">
   <tr width="50%">
         <td>
-            <div class="feedbackox"> You are correct, Good job.<br> Operating systems are very important, 
+            <div class="choiceBoxshow"> You are correct, Good job.<br> Operating systems are very important, 
                 if they were vulnerable, everything that is stored in them is vulnerable. That is why Operating systems are the starting point for security.<br><form action="https://attack.mitre.org/techniques/T1087/" target="_blank"> 
-                <input type="submit" value="Find more!" class=" button button2"> </form></div>
+                 </form></div>
+                 <input type="submit" value="Find more!" class=" button button2">
+                
         </td>
     
         <td> 
+            <div class="about">
             <img src="{% static 'images/True.png' %}" class="pic">
+         </div>
         </td>
         <td> 
-            <form method="post" action="http://127.0.0.1:8000/team/blue/task2/" name="trueFormCOnf">
+            <form method="post" action="{% url 'task2' %}" name="trueFormCOnf">
                {% csrf_token %}
                <input class="invisibleDiv" id="score" value="2" name="score">
                <input class="invisibleDiv"  value="0"  name="helpdeduct" >
@@ -173,20 +174,21 @@
 <table id="falseConf" class="invisibleDiv" width="100%" align="center">
     <tr width="50%">
           <td>
-              <div class="feedbackox" >Oh No !! We did not make the correct call.  <br>
+              <div class="choiceBoxshow" >Oh No !! We did not make the correct call.  <br>
                 Even well-trained employees can fall into some traps.<br>
                 Operating systems are very important, if they were vulnerable, everything that is stored in them is vulnerable.<br>
                 So we should have focussed on configuring the operating system.<br>
-                The link below can give you more information.  
+                 
                 <br><form action="https://attack.mitre.org/techniques/T1087/" target="_blank"> 
-                    <input type="submit" value="Find more!" class=" button button2"> </form>
+                     </form>
             </div>
+            <input type="submit" value="Find more!" class=" button button2">
           </td>
           <td>
-               <img src="{% static 'images/fault.png' %}" class="pic1show">
+               <img src="{% static 'images/fault.png' %}" class="pic">
           </td>
           <td>
-              <form  method="post" action="http://127.0.0.1:8000/team/blue/task2/" name="falseFormConf"> 
+              <form  method="post" action="{% url 'task2' %}" name="falseFormConf"> 
                 {% csrf_token %}
                 <input class="invisibleDiv"  value="0" name="score">
                 <input class="invisibleDiv"  value="2"  name="helpdeduct" >
@@ -200,15 +202,17 @@
   <table id="truenotConf" class="invisibleDiv" width="100%" align="center">
     <tr width="50%">
           <td>
-              <div class="feedbackox"> YoYou are correct, Good job.<br> Operating systems are very important, 
+              <div class="choiceBoxshow"> You are correct, Good job.<br> Operating systems are very important, 
                 if they were vulnerable, everything that is stored in them is vulnerable. That is why Operating systems are the starting point for security.</div>
           </td>
       
           <td> 
+            <div class="about">
               <img src="{% static 'images/True.png' %}" class="pic">
+            </div>
           </td>
           <td> 
-              <form method="post" action="http://127.0.0.1:8000/team/blue/task2/" name="trueFormCOnf">
+              <form method="post" action="{% url 'task2' %}" name="trueFormCOnf">
                  {% csrf_token %}
                  <input class="invisibleDiv" id="score" value="1" name="score">
                  <input class="invisibleDiv"  value="0"  name="helpdeduct" >
@@ -224,7 +228,7 @@
   <table id="falsenotConf" class="invisibleDiv" width="100%" align="center">
       <tr width="50%">
             <td>
-                <div class="feedbackox" >Oh No !! We did not make the correct call.  <br>
+                <div class="choiceBoxshow" >Oh No !! We did not make the correct call.  <br>
                     Even well-trained employees can fall into some traps.<br>
                     Operating systems are very important, if they were vulnerable, everything that is stored in them is vulnerable.<br>
                     So we should have focussed on configuring the operating system.<br>
@@ -232,10 +236,10 @@
               </div>
             </td>
             <td>
-                 <img src="{% static 'images/fault.png' %}" class="pic1show">
+                 <img src="{% static 'images/fault.png' %}" class="pic">
             </td>
             <td>
-                <form  method="post" action="http://127.0.0.1:8000/team/blue/task2/" name="falseFormConf"> 
+                <form  method="post" action="{% url 'task2' %}" name="falseFormConf"> 
                   {% csrf_token %}
                   <input class="invisibleDiv"  value="0" name="score">
                   <input class="invisibleDiv"  value="0"  name="helpdeduct" >
